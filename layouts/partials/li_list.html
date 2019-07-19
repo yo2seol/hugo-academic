@@ -36,7 +36,12 @@
     </span>
     {{ with $item.Params.location }}
     <span class="middot-divider"></span>
-    <span itemprop="location">{{ . }}</span>
+    <span itemprop="location" itemscope itemtype="http://schema.org/Place">
+        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+            <span itemprop="addressLocality">{{ . }}</span>,
+            <!--span itemprop="addressRegion"></span-->
+        </div>
+    </span>
     {{ end }}
   </div>
   {{ end }}
